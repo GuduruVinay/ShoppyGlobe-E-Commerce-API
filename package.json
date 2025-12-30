@@ -1,0 +1,21 @@
+{
+  "name": "shoppyglobe-e-commerce-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-API.git"
+  },
+  "keywords": [],
+  "author": "Guduru Vinay",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-API/issues"
+  },
+  "homepage": "https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-API#readme"
+}
