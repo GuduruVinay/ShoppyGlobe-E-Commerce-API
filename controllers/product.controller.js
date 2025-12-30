@@ -54,3 +54,15 @@ export async function updateProductQuantity(req, res) {
         return res.status(500).json({ "errorMessage": err });
     }
 }
+
+// Remove a product from the cart
+export async function removeProduct(req, res) {
+    try {
+        const idd = req.params.id;
+        const deletedProduct = await ProductModel.findByIdAndDelete(idd);
+        return res.status(200).json({ "deletedProduct": deletedProduct });
+    }
+    catch(err) {
+        return res.status(500).json({ "errorMessage": err });
+    }
+}
