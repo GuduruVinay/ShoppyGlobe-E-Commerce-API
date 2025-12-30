@@ -1,4 +1,4 @@
-import { fetchProducts, getProduct } from "../controllers/product.controller.js";
+import { addProduct, fetchProducts, getProduct } from "../controllers/product.controller.js";
 
 
 export default function productRoute(app) {
@@ -6,4 +6,6 @@ export default function productRoute(app) {
     app.get('/products', fetchProducts);
     // Fetch details of a single product by its ID
     app.get('/products/:id', getProduct);
+    // Add a product to the shopping cart
+    app.post('/cart', addProduct);
 }

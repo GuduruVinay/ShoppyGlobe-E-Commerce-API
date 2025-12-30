@@ -30,3 +30,15 @@ export async function getProduct(req, res) {
         return res.status(500).json({ "errorMessage": err });
     }
 }
+
+// Add a product to the shopping cart
+export async function addProduct(req, res) {
+    try {
+        const { title, price, description, category, imageUrl } = req.body;
+        const newProduct = await ProductModel.create({ title, price, description, category, imageUrl });
+        return res.status(201).json({ "newProduct": newProduct });
+    }
+    catch(err) {
+        return res.status(500).json({ "errorMessage": err });
+    }
+}
