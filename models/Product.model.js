@@ -20,7 +20,8 @@ const productSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         required: true
-    }
+    },
+    quantity: Number
 });
 
 const ProductModel = mongoose.model('Products', productSchema);
