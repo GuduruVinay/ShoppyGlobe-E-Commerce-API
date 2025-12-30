@@ -20,7 +20,9 @@
   "homepage": "https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-API#readme",
   "dependencies": {
     "express": "^5.2.1",
-    "mongoose": "^9.1.0",
+    "mongoose": "^9.1.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.11"
   }
 }

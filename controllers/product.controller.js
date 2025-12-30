@@ -34,8 +34,8 @@ export async function getProduct(req, res) {
 // Add a product to the shopping cart
 export async function addProduct(req, res) {
     try {
-        const { title, price, description, category, imageUrl } = req.body;
-        const newProduct = await ProductModel.create({ title, price, description, category, imageUrl });
+        const { title, price, description, quantity} = req.body;
+        const newProduct = await CartModel.create({ title, price, description, quantity });
         return res.status(201).json({ "newProduct": newProduct });
     }
     catch(err) {
@@ -47,7 +47,7 @@ export async function addProduct(req, res) {
 export async function updateProductQuantity(req, res) {
     try {
         const idd = req.params.id;
-        const updateProductQuantity = await ProductModel.findByIdAndUpdate(idd, req.body, {new: true});
+        const updateProductQuantity = await CartModel.findByIdAndUpdate(idd, req.body, {new: true});
         return res.status(200).json({ "updatedProductQuantity": updateProductQuantity });
     }
     catch(err) {
@@ -59,7 +59,7 @@ export async function updateProductQuantity(req, res) {
 export async function removeProduct(req, res) {
     try {
         const idd = req.params.id;
-        const deletedProduct = await ProductModel.findByIdAndDelete(idd);
+        const deletedProduct = await CartModel.findByIdAndDelete(idd);
         return res.status(200).json({ "deletedProduct": deletedProduct });
     }
     catch(err) {

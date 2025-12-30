@@ -1,7 +1,7 @@
 import { addProduct, fetchProducts, getProduct, removeProduct, updateProductQuantity } from "../controllers/product.controller.js";
 
 
-export default function productRoute(app) {
+export default function productRoutes(app) {
     // Fetch a list of products
     app.get('/products', fetchProducts);
 
