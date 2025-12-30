@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-API/issues"
   },
-  "homepage": "https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-API#readme"
+  "homepage": "https://github.com/GuduruVinay/ShoppyGlobe-E-Commerce-API#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
