@@ -99,7 +99,7 @@ The local server will start on http://localhost:8000
 
 8. MongoDB Database View
 * User
-![MongoDB User Screenshot](screenshots/mongodb_user.png.png)
+![MongoDB User Screenshot](screenshots/mongodb_user.png)
 * Products
 ![MongoDB Products Screenshot](screenshots/mongodb_products.png)
 * Cart
