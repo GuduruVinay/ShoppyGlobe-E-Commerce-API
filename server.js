@@ -1,29 +1,36 @@
 // Imports
 import express from "express";
 import mongoose from "mongoose";
-import productRoutes from "./routes/product.routes.js";
+import dotenv from "dotenv";
 
-// Express Object
+// Route Imports
+import productRoutes from "./routes/product.routes.js";
+import cartRoutes from "./routes/cart.routes.js";
+
+dotenv.config();
 const app = express();
 
-// Connecting to MongoDB (Atlas)
-mongoose.connect("mongodb+srv://guduruvinay3_db_user:taBsur5r3zhwcG08@cluster0.spt52f4.mongodb.net/")
-.then((res) => { console.log("DATABASE IS CONNECTED") })
-.catch((err) => { console.log("ERROR IN CONNECTING DATABASE") })
-
-// Middleware to parse incoming requests with JSON
+// Middleware to parse JSON bodies
 app.use(express.json());
 
-// Root Route
-app.get('/', (req, res) => {
-    res.send("Root Route");
-})
+// Database Connection
+mongoose.connect(process.env.MONGO_URI)
+.then(() => { console.log("MongoDB CONNECTED") })
+.catch((err) => { console.error("MongoDB Connection Error:", err) });
 
-// Product Route
-productRoutes(app)
+// Routes
+app.use('/products', productRoutes);
+app.use('/cart', cartRoutes);
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: 'Something went wrong!', error: err.message });
+});
+
 
 // Local Host at PORT
-const PORT = 8080;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server RUNNING ON PORT: ${PORT}`);
 });
