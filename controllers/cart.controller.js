@@ -6,24 +6,32 @@ export async function addProduct(req, res) {
     try {
         const userIdd = req.user.id;
         const { productId, quantity } = req.body;
+        // Validate Product
         const product = await ProductModel.findById(productId);
         if(!product) {
             return res.status(404).json({ message: "Product not found" });
         }
+
+        // Find Cart for User
         let cart = await CartModel.findOne({ userId: userIdd });
         if(cart) {
+            // Check if product exists in cart
             const itemIndex = cart.items.findIndex(p => p.productId == productId);
             if (itemIndex > -1) {
+                // Update quantity
                 cart.items[itemIndex].quantity += quantity;
             } else {
+                // Add new item
                 cart.items.push({ productId, quantity });
             }
         } else {
+            // Create new cart
             cart = new CartModel({
                 userId: userIdd,
                 items: [{ productId, quantity }]
             });
         }
+
         await cart.save();
         return res.status(201).json(cart);
     }
@@ -38,10 +46,12 @@ export async function updateProductQuantity(req, res) {
         const userIdd = req.user.id;
         const productId = req.params.id;
         const { quantity } = req.body;
+
         const cart = await CartModel.findOne({ userId: userIdd });
         if(!cart) {
             return res.status(404).json({ message: 'Cart not found' });
         }
+
         const itemIndex = cart.items.findIndex(p => p.productId == productId);
         if(itemIndex > -1) {
             cart.items[itemIndex].quanity = quantity;
@@ -61,11 +71,13 @@ export async function removeProduct(req, res) {
     try {
         const userIdd = req.user.id;
         const productId = req.params.id;
+
         const cart = await CartModel.findOne({ userId: userIdd });
         if(!cart) {
             return res.status(404).json({ message: 'Cart not found' });
         }
         cart.items = cart.items.filter(item => item.productId != productId);
+
         await cart.save();
         res.status(200).json(cart);
     }

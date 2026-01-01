@@ -9,6 +9,7 @@ export default function auth(req, res, next) {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        // Attach user info (id) to request
         req.user = decoded;
         next();
     } catch(error) {

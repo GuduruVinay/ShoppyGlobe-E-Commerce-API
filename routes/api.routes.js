@@ -3,10 +3,10 @@ import { loginUser, registerUser } from "../controllers/auth.controller";
 
 const router = Router();
 
-// Register
+// POST /api/register - Register new user
 router.post('/register', registerUser);
 
-// Login
+// POST /api/login - Login existing user
 router.post('/login', loginUser);
 
 export default router;

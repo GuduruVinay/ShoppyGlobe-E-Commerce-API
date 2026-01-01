@@ -20,9 +20,9 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err) => { console.error("MongoDB Connection Error:", err) });
 
 // Routes
-app.use('/api', authRoutes);
-app.use('/products', productRoutes);
-app.use('/cart', cartRoutes);
+app.use('/api', authRoutes); // /register, /login
+app.use('/products', productRoutes); // /products
+app.use('/cart', cartRoutes); // /cart
 
 // Global Error Handler
 app.use((err, req, res, next) => {
