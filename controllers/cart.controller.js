@@ -54,7 +54,7 @@ export async function updateProductQuantity(req, res) {
 
         const itemIndex = cart.items.findIndex(p => p.productId == productId);
         if(itemIndex > -1) {
-            cart.items[itemIndex].quanity = quantity;
+            cart.items[itemIndex].quantity = quantity;
             await cart.save();
             res.status(200).json(cart);
         } else {

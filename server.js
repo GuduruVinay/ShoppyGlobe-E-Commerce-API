@@ -24,6 +24,11 @@ app.use('/api', authRoutes); // /register, /login
 app.use('/products', productRoutes); // /products
 app.use('/cart', cartRoutes); // /cart
 
+// Root Route
+app.get('/', (req, res) => {
+    res.json("Welcome To ShoppyGlobe E Commerce");
+})
+
 // Global Error Handler
 app.use((err, req, res, next) => {
     console.error(err.stack);
@@ -32,7 +37,7 @@ app.use((err, req, res, next) => {
 
 
 // Local Host at PORT
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server RUNNING ON PORT: ${PORT}`);
 });
