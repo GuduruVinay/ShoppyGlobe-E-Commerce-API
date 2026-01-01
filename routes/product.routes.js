@@ -1,10 +1,12 @@
-import { fetchProducts, getProduct } from "../controllers/product.controller.js";
+import { Router } from "express";
+import { getAllProducts, getProduct } from "../controllers/product.controller.js";
 
+const router = Router();
 
-export default function productRoutes(app) {
-    // Fetch a list of products
-    app.get('/products', fetchProducts);
+// GET /products - List all products
+router.get('/', getAllProducts);
 
-    // Fetch details of a single product by its ID
-    app.get('/products/:id', getProduct);
-}
+// GET /products/:id - Single product details
+router.get('/:id', getProduct);
+
+export default router;

@@ -1,12 +1,16 @@
+import { Router } from "express";
 import { addProduct, removeProduct, updateProductQuantity } from "../controllers/cart.controller.js";
 
-export default function cartRoutes(app) {
-    // Add a product to the shopping cart
-    app.post('/cart', addProduct);
+const router = Router();
 
-    // Update the quantity of a product in the cart
-    app.put('/cart/:id', updateProductQuantity);
+// POST /cart - Add item
+router.post('/', addProduct);
 
-    // Remove a product from the cart
-    app.delete('/cart/:id', removeProduct);
-}
+// PUT /cart/:id - Update quantity (Using Product ID as param)
+router.put('/:id', updateProductQuantity);
+
+// DELETE /cart/:id - Remove item (Using Product ID as param)
+router.delete('/:id', removeProduct);
+
+
+export default router;

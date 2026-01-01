@@ -1,7 +1,7 @@
 import ProductModel from "../models/Product.model.js";
 
 // Fetch a list of products
-export async function fetchProducts(req, res) {
+export async function getAllProducts(req, res) {
     try {
         const products = await ProductModel.find();
         if(!products) {

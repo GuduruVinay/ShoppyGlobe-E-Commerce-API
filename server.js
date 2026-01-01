@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 // Route Imports
+import authRoutes from "./routes/auth.routes.js";
 import productRoutes from "./routes/product.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
 
@@ -19,6 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err) => { console.error("MongoDB Connection Error:", err) });
 
 // Routes
+app.use('/api', authRoutes);
 app.use('/products', productRoutes);
 app.use('/cart', cartRoutes);
 
