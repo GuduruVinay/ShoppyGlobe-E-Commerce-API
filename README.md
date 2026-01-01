@@ -76,34 +76,34 @@ The local server will start on http://localhost:8000
 ## API Testing Screenshots
 
 1. User Registration
-`![Register Screenshot](screenshots/register.png)`
+![Register Screenshot](screenshots/register.png)
 
 2. User Login & Token Generation
-`![Login Screenshot](screenshots/login.png)`
+![Login Screenshot](screenshots/login.png)
 
 3. Fetch All Products
-`![All Products Screenshot](screenshots/products.png)`
+![All Products Screenshot](screenshots/products.png)
 
 4. Fetch Single Product
-`![Product Screenshot](screenshots/product.png)`
+![Product Screenshot](screenshots/product.png)
 
 5. Add Product to the Cart (With Token)
-`![Cart Authorization Screenshot](screenshots/cart_authorization.png)`
-`![Add Product Screenshot](screenshots/cart_add.png)`
+![Cart Authorization Screenshot](screenshots/cart_authorization.png)
+![Add Product Screenshot](screenshots/cart_add.png)
 
 6. Update Product Quantity in the Cart
-`![Update Product Quantity Screenshot](screenshots/cart_update.png)`
+![Update Product Quantity Screenshot](screenshots/cart_update.png)
 
 7. Delete Product from the Cart
-`![Delete Product Screenshot](screenshots/cart_delete.png)`
+![Delete Product Screenshot](screenshots/cart_delete.png)
 
 8. MongoDB Database View
 * User
-`![MongoDB User Screenshot](screenshots/mongodb_user.png.png)`
+![MongoDB User Screenshot](screenshots/mongodb_user.png.png)
 * Products
-`![MongoDB Products Screenshot](screenshots/mongodb_products.png)`
+![MongoDB Products Screenshot](screenshots/mongodb_products.png)
 * Cart
-`![MongoDB Cart Screenshot](screenshots/mongodb_cart.png)`
+![MongoDB Cart Screenshot](screenshots/mongodb_cart.png)
 
 
 ## Testing
