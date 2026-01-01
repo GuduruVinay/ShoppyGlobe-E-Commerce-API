@@ -37,7 +37,7 @@ app.use((err, req, res, next) => {
 
 
 // Local Host at PORT
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Server RUNNING ON PORT: ${PORT}`);
 });
