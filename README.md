@@ -105,7 +105,6 @@ The local server will start on http://localhost:8000
 * Cart
 ![MongoDB Cart Screenshot](screenshots/mongodb_cart.png)
 
-
 ## Testing
 
 This project was tested using ThunderClient (VS Code Extension).
